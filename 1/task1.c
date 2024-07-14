@@ -17,7 +17,7 @@ struct Contact {
   char phone_numbers[MAX_PHONE_NUM][MAX_PHONE_NUM];
   char emails[MAX_EMAIL_LEN][MAX_EMAIL_LEN];
   char social_links[MAX_SOC][MAX_SOC];
-  char messenger_links[MAX_SOC ][MAX_SOC ];
+  char messenger_links[MAX_SOC][MAX_SOC];
   int phone_count;
   int email_count;
   int social_count;
