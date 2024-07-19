@@ -8,35 +8,26 @@
 #define MAX_SOC 100 
 
 struct Contact {
-    char firstname[MAX_SYM];
-    char lastname[MAX_SYM];
-    char thirdname[MAX_SYM];
-    char company[MAX_SYM];
-    char post[MAX_SYM];
-    char phone_numbers[MAX_PHONE_NUM][MAX_PHONE_NUM];
-    char emails[MAX_EMAIL_LEN][MAX_EMAIL_LEN];
-    char social_links[MAX_SOC][MAX_SOC];
-    char messenger_links[MAX_SOC][MAX_SOC];
-    int phone_count;
-    int email_count;
-    int social_count;
-    int messenger_count;
+    int data;
 
-    struct Contact *prev; // Указатель на предыдущий контакт
-    struct Contact *next; // Указатель на следующий контакт
+    struct Contact *prev; 
+    struct Contact *next; 
 };
 
-struct Contact *head = NULL;
+struct Contact *head;
 
-void addContact() {
-    struct Contact *new_person= (struct Contact *)malloc(sizeof(struct Contact));
+struct Contact *addcontact(int value) {
+    struct Contact *tmp = head;
+    struct Contact *new_person = malloc(sizeof(struct Contact));
+    new_person->data = value;
+    //struct Contact *new_person= (struct Contact *)malloc(sizeof(struct Contact));
     if (new_person == NULL) {
         printf("Ошибка выделения памяти!\n");
         return;
     }
 
     printf("Введите имя: ");
-    scanf("%s", new_person->firstname);
+    scanf("%s", );
 
     printf("Введите фамилию: ");
     scanf("%s", new_person->lastname);
@@ -107,7 +98,7 @@ void addContact() {
 
 void editContact() {
     if (head == NULL) {
-        printf("Список контактов пуст.\n");
+        printf("\nСписок контактов пуст.\n");
         return;
     }
 
