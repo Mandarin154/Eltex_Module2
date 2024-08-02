@@ -45,7 +45,6 @@ void addContact() {
     printf("Введите должность (необязательно): ");
     scanf("%s", new_person.post);
 
-    // Ввод телефонов
     new_person.phone_count = 0;
     printf("Введите номера телефонов (разделяйте пробелами, введите 'end' для завершения): ");
     while (1) {
@@ -57,7 +56,6 @@ void addContact() {
         strcpy(new_person.phone_numbers[new_person.phone_count++], phone);
     }
 
-    // Ввод email
     new_person.email_count = 0;
     printf("Введите адреса электронной почты (разделяйте пробелами, введите 'end' для завершения): ");
     while (1) {
@@ -69,7 +67,6 @@ void addContact() {
         strcpy(new_person.emails[new_person.email_count++], email);
     }
 
-    // Ввод социальных ссылок
     new_person.social_count = 0;
     printf("Введите ссылки на соцсети (разделяйте пробелами, введите 'end' для завершения): ");
     while (1) {
@@ -81,7 +78,6 @@ void addContact() {
         strcpy(new_person.social_links[new_person.social_count++], link);
     }
 
-    // Ввод мессенджер ссылок
     new_person.messenger_count = 0;
     printf("Введите ссылки на мессенджеры (разделяйте пробелами, введите 'end' для завершения): ");
     while (1) {
@@ -114,7 +110,6 @@ void editContact() {
 
     struct Contact *contact = &contacts[index];
 
-    // Показываем текущие данные контакта
     printf("Текущие данные контакта:\n");
     printf("Имя: %s\n", contact->firstname);
     printf("Фамилия: %s\n", contact->lastname);
@@ -139,7 +134,6 @@ void editContact() {
     }
     printf("\n");
 
-    // Запрашиваем, что редактировать
     printf("Что вы хотите отредактировать?\n");
     printf("1. Имя\n");
     printf("2. Фамилию\n");
@@ -155,7 +149,6 @@ void editContact() {
     int choice;
     scanf("%d", &choice);
 
-    // Обработка выбора для редактирования
     switch (choice) {
         case 1:
             printf("Введите новое имя: ");
@@ -225,7 +218,7 @@ void editContact() {
                 strcpy(contact->messenger_links[contact->messenger_count++], link);
             }
             break;
-        case 0: // Возврат в главное меню
+        case 0: 
             return;
         default:
             printf("Неверный выбор\n");
@@ -289,7 +282,6 @@ void displayContacts() {
     }
 }
 
-// Главное меню
 void menu() {
     printf("\n--- Меню ---\n");
     printf("1. Добавить контакт\n");
